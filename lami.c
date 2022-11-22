@@ -8,11 +8,9 @@
 #include <avr/signal.h>
 
 #include "lami.h"
-#include "util.c"
 #include "zero.c"
-#include "ctrl.c"
 //////////////////////////////////////
-//программа обработки системного прерывания с периодом 20 микросекунд
+//ГЇГ°Г®ГЈГ°Г Г¬Г¬Г  Г®ГЎГ°Г ГЎГ®ГІГЄГЁ Г±ГЁГ±ГІГҐГ¬Г­Г®ГЈГ® ГЇГ°ГҐГ°Г»ГўГ Г­ГЁГї Г± ГЇГҐГ°ГЁГ®Г¤Г®Г¬ 20 Г¬ГЁГЄГ°Г®Г±ГҐГЄГіГ­Г¤
 SIGNAL(SIG_OUTPUT_COMPARE2) 
 {
   drv_act();
@@ -26,7 +24,7 @@ void InitTimers(void)
    TIMSK |= 0x80 | 0x04 | 0x01;
 
    TCCR2 = 0xA;//0.125us * 8 * ((OCR2+1))
-   OCR2 = 19;// 20us, 10ms/20us=500 шагов ШИМ 
+   OCR2 = 19;// 20us, 10ms/20us=500 ГёГ ГЈГ®Гў ГГ€ГЊ 
    
    TCCR0 = 0x07;
    TCCR1A = 0x00; //Setup TC1 to count PB1
